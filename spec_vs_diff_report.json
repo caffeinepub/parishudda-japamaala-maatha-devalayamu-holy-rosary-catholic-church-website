@@ -1,0 +1,126 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T18:36:41.004Z",
+  "summary": "The diff implements a comprehensive Holy Rosary Catholic Church site with admin dashboard covering most requirements. The backend Motoko actor, frontend landing page sections, admin modules, and draft state persistence are all present. However, several specific requirements have gaps: the Motoko backend uses non-stable List variables, mass schedule delete/edit is missing from admin, prayers are not seeded in backend, the Spiritual Message admin form is missing the Date field, and update functions return void instead of a success confirmation.",
+  "missing_requirements": [
+    {
+      "id": "REQ-13",
+      "requirement": "All four data types must be stored in stable variables and survive canister upgrades.",
+      "reason": "The backend/main.mo uses 'let massSchedule = List.empty<MassTiming>()', 'let prayers = List.empty<Prayer>()', 'let mediaGallery = List.empty<MediaItem>()', 'var spiritualMessage' and 'var announcement'. None are declared as 'stable var', so they will not survive canister upgrades.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Update functions must replace/append data and return a success confirmation.",
+      "reason": "All update/add functions in the Motoko backend return 'async ()' (unit/void), not a success confirmation value. REQ-13 AC requires update functions to return a success confirmation.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Seed with default data: Sunday 6:30 AM Telugu Mass and Sunday 8:30 AM English Mass on first load.",
+      "reason": "The backend has no initialization logic (no system func postupgrade or init) to seed the default mass timings. Default data will not be present on first deploy.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "At least 2 sample prayers per language are seeded in backend state.",
+      "reason": "The backend has no seeding logic for prayers. There is no initialization block that adds default Telugu or English prayers to the prayers list.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "requirement": "Mass Schedule admin module must support edit and delete of existing entries.",
+      "reason": "The MassScheduleManager only implements Add Mass Timing. There is no delete or edit functionality visible in the diff. The backend also has no deleteMassTiming or updateMassTiming function.",
+      "evidence": [
+        "frontend/src/components/admin/MassScheduleManager.tsx",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "requirement": "Spiritual Message admin form must include a Date field.",
+      "reason": "SpiritualMessageManager's draft interface only has title, author, and fullText fields. The Date field is absent from the admin form. The backend updateSpiritualMessage auto-sets date via Time.now() and does not accept a date parameter from the admin.",
+      "evidence": [
+        "frontend/src/components/admin/SpiritualMessageManager.tsx",
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "MixinStorage blob-storage import included in Motoko backend",
+      "reason": "The build request does not mention a blob storage mixin. The constraint requires all Motoko logic in a single actor and prohibits external databases. Importing MixinStorage from blob-storage/Mixin was not requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Lightbox modal viewer for media gallery images on the landing page",
+      "reason": "The build request only asks for a responsive grid with captions and YouTube iframes. A click-to-expand lightbox overlay was not specified in any requirement.",
+      "evidence": [
+        "frontend/src/components/MediaGallery.tsx"
+      ]
+    },
+    {
+      "description": "Admin link added directly in the public-facing Navbar",
+      "reason": "The build request does not specify adding an Admin navigation link in the public Navbar. The admin route is described as a protected route at /admin, not a publicly advertised link.",
+      "evidence": [
+        "frontend/src/components/Navbar.tsx"
+      ]
+    },
+    {
+      "description": "Duplicate filterPrayers function and count utility functions exposed in backend",
+      "reason": "filterPrayers duplicates getPrayersByLanguage, and countMassSchedule/countPrayers/countMediaGallery were not requested in REQ-13, which specifies only query and update functions for the four data types.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AnnouncementsBanner.tsx",
+    "frontend/src/components/DonationCTA.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/GoogleMap.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/MassSchedule.tsx",
+    "frontend/src/components/MediaGallery.tsx",
+    "frontend/src/components/Navbar.tsx",
+    "frontend/src/components/PrayerModule.tsx",
+    "frontend/src/components/SectionHeader.tsx",
+    "frontend/src/components/SpiritualMessage.tsx",
+    "frontend/src/components/SpiritualMessageModal.tsx",
+    "frontend/src/components/admin/AnnouncementsManager.tsx",
+    "frontend/src/components/admin/MassScheduleManager.tsx",
+    "frontend/src/components/admin/MediaGalleryManager.tsx",
+    "frontend/src/components/admin/SpiritualMessageManager.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useDraftState.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/hooks/useScrollAnimation.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AdminDashboard.tsx",
+    "frontend/src/pages/AdminLogin.tsx",
+    "frontend/src/pages/LandingPage.tsx",
+    "frontend/src/utils/auth.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

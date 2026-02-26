@@ -1,0 +1,5 @@
+{
+  "frontend/src/components/admin/MediaGalleryManager.tsx": "Admin module for managing the church media gallery, supporting single file upload, bulk folder selection (via webkitdirectory), and YouTube URL addition. Removed the `blob-storage` dependency entirely; images are now read via the browser's `FileReader` API and stored as data URLs in the backend.",
+  "frontend/src/components/admin/AnnouncementsManager.tsx": "Admin module for creating and managing the church announcement banner, with fields for announcement text, event date, and an active/hidden toggle switch. Includes a live preview of the banner, draft persistence via useDraftState, and displays the currently saved announcement status.",
+  "frontend/src/blob-storage.d.ts": "TypeScript ambient module declaration for the Caffeine platform-injected `blob-storage` module, providing type definitions for the `ExternalBlob` class and its methods (`fromBytes`, `fromURL`, `getDirectURL`, `getBytes`, `withUploadProgress`)."
+}

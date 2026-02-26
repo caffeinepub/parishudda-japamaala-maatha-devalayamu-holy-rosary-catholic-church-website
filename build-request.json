@@ -1,0 +1,292 @@
+{
+  "kind": "build_request",
+  "title": "Holy Rosary Catholic Church — Full Site with Admin Dashboard",
+  "projectName": "Holy Rosary Church",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Build a professional single-page landing site for 'Parishudda Japamaala Maatha Devalayamu (Holy Rosary Catholic Church)' in Nellore. The page must be composed of the following sections in order: Navbar, Hero, Announcements Banner, Daily Mass Schedule, Daily Spiritual Message, Prayer Module, Church Media Gallery, Online Donation CTA, Google Map, and Footer.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Now Get me the the site",
+          "Name of the church : Parishudda Japamaala Maatha Devalayamu (Holy Rosary Catholic Church)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All sections are visible on the landing page in the specified order.",
+        "Church name 'Parishudda Japamaala Maatha Devalayamu (Holy Rosary Catholic Church)' appears in the hero and footer.",
+        "The page is fully responsive."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Apply a sacred, professional holy visual theme across the entire site. Use deep navy/midnight blue and warm ivory/cream as primary colors. Accent with gold (#D4AF37) for borders, headings, and highlights. Use Playfair Display (serif) for headings and a clean sans-serif for body text. Add a linear-gradient(to bottom, rgba(0,0,0,0.7), transparent) overlay on the Hero image. Use gold borders (#D4AF37) on Priest Welcome and Feast Day cards. All sections should slide up as they enter the viewport. The Online Donation button must have a subtle CSS pulse animation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "MAke sue everything looks great with descent lovely professional holy look",
+          "Gradients: Use a linear-gradient(to bottom, rgba(0,0,0,0.7), transparent)",
+          "Borders: Use border-golden (hex #D4AF37)",
+          "Sections should 'Slide Up' as the user scrolls",
+          "The 'Online Donation' button should have a subtle pulse animation"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Gold (#D4AF37) accent color is consistently applied.",
+        "Playfair Display font is used for all section headings.",
+        "Hero section has a dark gradient overlay ensuring white text is legible.",
+        "Scroll-triggered slide-up animations are active on each section.",
+        "Donation button visibly pulses."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement a scroll-aware Navbar. On load, the Navbar background is transparent. When the user scrolls past 50px, it transitions to a solid deep navy/blue-900 background. Include the church name and navigation links to each page section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Navbar.tsx: Uses useEffect to track window scroll position. If window.scrollY > 50, change background from bg-transparent to bg-blue-900."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navbar is transparent at the top of the page.",
+        "Navbar background becomes solid navy when scrolled > 50px.",
+        "Navigation links anchor-scroll to their respective sections."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a Daily Mass Schedule section that reads from a local data store (Motoko backend stable variable acting as a JSON-like record). Display a table/card list of mass timings with fields: Day, Time, and Service Type (Mass / Confession / Adoration). Seed with default data: Sunday 6:30 AM Telugu Mass and Sunday 8:30 AM English Mass.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Mass Schedule — Day, Time, Service Type (Mass/Confession/Adoration)",
+          "{ \"day\": \"Sunday\", \"time\": \"6:30 AM\", \"type\": \"Telugu Mass\" }"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Mass schedule is displayed on the landing page.",
+        "Default seed data (Sunday 6:30 AM Telugu Mass, Sunday 8:30 AM English Mass) is visible on first load.",
+        "Data updates made in the admin panel are reflected on the landing page after saving."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a Daily Spiritual Message section that reads from backend state. Display a card with fields: Title, Author (Pope/Priest name), Full Text, and Date. Implement a 'Read More' modal that expands the full message text with an animation when clicked.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Spiritual Message — Title, Author (Pope/Priest), Full Text, Date.",
+          "DailyMessage.tsx: A card that passes the JSON 'long text' into a Framer Motion Modal."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Spiritual message card is visible on the landing page.",
+        "Clicking 'Read More' opens a modal with the full message text.",
+        "Modal can be dismissed."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create a Prayer Module section with a language filter toggle/search input allowing users to switch between Telugu and English prayers. Prayers are stored in backend state and displayed as cards or a list. The filter updates the visible prayers in real time using React state.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "PrayerModule.tsx: Uses a useState hook to filter prayers by language (Telugu/English) based on the search input."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Language filter (Telugu / English) is visible and functional.",
+        "Selecting a language filters the displayed prayers instantly.",
+        "At least 2 sample prayers per language are seeded."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create a Church Media Gallery section that reads from backend state. Display uploaded images and YouTube video embeds with captions in a responsive grid. Images are stored as base64 or URL references; YouTube URLs render as embedded iframes.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Media Gallery — Image Upload, YouTube URL, Caption.",
+          "The ChurchMedia component maps through media.json and renders the image"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Media gallery renders images and YouTube embeds in a responsive grid.",
+        "Each item shows its caption.",
+        "Content added via admin is reflected in the gallery after saving."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create an Announcements Banner at the top of the page (below Navbar) that reads from backend state. Display highlight text, event date, and respect an 'Active' toggle — only show the banner when Active is true.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Announcements — Highlight Text, Event Date, 'Active' Toggle.",
+          "announcements: 'Feast of the Holy Rosary starts Oct 7th.'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Banner is visible only when the Active toggle is enabled in admin.",
+        "Banner shows highlight text and event date.",
+        "Deactivating the banner in admin hides it on the landing page."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Embed the Google Map for the church location using the shared URL https://share.google/RgB7sMob1CDcBHUIp. Since shared Google links cannot be iframed directly, display a prominent 'View on Google Maps' button/link that opens the URL in a new tab, accompanied by the church address in Nellore.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Google Map Location : https://share.google/RgB7sMob1CDcBHUIp",
+          "its in Nellore"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A map section is present on the landing page.",
+        "A clearly labeled button/link opens https://share.google/RgB7sMob1CDcBHUIp in a new tab.",
+        "The church location in Nellore is mentioned in the section."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Build a protected Admin Dashboard at the /admin route. Guard it with a login page that checks a hardcoded password: ChurchofHolyRosary@2026. On successful login, set an auth_session value in localStorage. On subsequent visits, if the auth session is valid, skip the login screen. Provide a logout button that clears the session.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Frontend Auth: The password is hardcoded as requested.",
+          "Keep password : ChurchofHolyRosary@2026",
+          "if i am not saving it and i log out then if it vanishes then its fine"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Visiting /admin shows a login form if not authenticated.",
+        "Entering password 'ChurchofHolyRosary@2026' grants access.",
+        "Wrong password shows an error.",
+        "Logged-in state persists across tab switches and page refreshes.",
+        "Logout button clears the session and redirects to the login screen."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Build the Admin Dashboard with four management modules: (1) Mass Schedule — add/edit/delete entries with Day, Time, Service Type fields; (2) Spiritual Message — form with Title, Author, Full Text, Date fields; (3) Media Gallery — upload images (single file and bulk folder selection), add YouTube URLs, add captions, and manage/delete existing items; (4) Announcements — form with Highlight Text, Event Date, and Active toggle. Each module has a Save button that persists data to Motoko backend state via canister calls.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The Admin Panel (/admin) is the 'Command Center.'",
+          "in the admin login there is option called media gallery , add an enhancement to add direct folder which has images , videos etc",
+          "the data is not saving in landing page when admins enters / gives any data"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All four modules are accessible from the admin dashboard.",
+        "Clicking Save in any module calls the backend and persists the data.",
+        "After saving, the landing page reflects the updated content.",
+        "Media Gallery supports single file upload, bulk folder selection (via webkitdirectory), and YouTube URL input.",
+        "Existing media items can be deleted from the gallery manager."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Persist unsaved admin form draft state using localStorage so that if the admin switches browser tabs or navigates away without saving, the in-progress form data is still present when they return to the admin panel. Draft state must only be cleared when the admin explicitly logs out or clicks Save successfully.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "i should not get any issue like if i switch to other tabs , the data is vanishing automatically when i am not saving it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Switching browser tabs and returning to /admin shows all previously entered (unsaved) form data intact.",
+        "Refreshing the admin page restores unsaved draft data.",
+        "Logging out clears all draft data from localStorage.",
+        "Saving successfully also clears the draft for that module."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Implement all backend data storage using Motoko stable variables in the single main actor. Store: massTimings (array of records with day, time, serviceType), spiritualMessage (record with title, author, fullText, date), mediaItems (array of records with type, url/base64, caption), and announcement (record with text, eventDate, active). Expose update and query functions for each data type.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "the data is not saving in landing page when admins enters / gives any data",
+          "Admin Actions: When the Admin saves a change, the dashboard sends a request"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All four data types are stored in stable variables and survive canister upgrades.",
+        "Query functions return current data for all four types.",
+        "Update functions replace/append data and return a success confirmation.",
+        "Landing page frontend fetches from these query functions on load."
+      ]
+    }
+  ],
+  "constraints": [
+    "Admin password must be exactly: ChurchofHolyRosary@2026",
+    "Church name must appear exactly as: Parishudda Japamaala Maatha Devalayamu (Holy Rosary Catholic Church)",
+    "Google Maps URL must be: https://share.google/RgB7sMob1CDcBHUIp",
+    "Do not use Next.js, Node.js fs module, or any server-side file system — use Motoko backend for all data persistence",
+    "Do not use external databases (Supabase, Vercel KV, etc.)",
+    "All Motoko logic must remain in a single actor in backend/main.mo",
+    "Do not edit any files listed in frontend.immutablePaths"
+  ],
+  "nonGoals": [
+    "Real-time WebSocket or push notification features",
+    "User-facing accounts or congregation registration",
+    "Payment gateway integration for the donation button (button is a CTA/link only)",
+    "Server-side rendering or ISR via Next.js (not supported — use React + Motoko)",
+    "Deployment to Vercel or DigitalOcean VPS",
+    "Email or SMS notification on admin save",
+    "Multi-admin or role-based access control"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Majestic Catholic church exterior facade with warm golden evening light, ornate architecture with a prominent cross, stained glass window visible, lush greenery surrounding the entrance — used as the Hero background (church-hero.dim_1920x1080.png)",
+      "Close-up of a Holy Rosary with golden beads on a dark velvet background, soft candlelight glow (rosary-bg.dim_1200x600.png)",
+      "Elegant decorative divider featuring golden lily and cross motifs on a transparent background (divider-ornament.dim_800x80.png)",
+      "Circular church logo badge with a golden rosary ring border, white dove at center, deep navy background (church-logo.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-professional-single-page-landing-site-for-parishudda-japamaala-maatha-devalayamu-holy-rosary-catholic-church-in-nellore-the-page-must-be-composed-of-the-following-sections-in-order-navbar-hero-announcements-banner-daily-mass-schedule-daily-spiritual-message-prayer-module-church-media-gallery-online-donation-cta-google-map-and-footer",
+      "featureTitle": "Build a professional single-page landing site for 'Parishudda Japamaala Maatha Devalayamu (Holy Rosary Catholic Church)' in Nellore. The page must be composed of the following sections in order: Navbar, Hero, Announcements Banner, Daily Mass Schedule, Daily Spiritual Message, Prayer Module, Church Media Gallery, Online Donation CTA, Google Map, and Footer.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AnnouncementsBanner.tsx",
+        "frontend/src/components/DonationCTA.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/components/GoogleMap.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/MassSchedule.tsx",
+        "frontend/src/components/MediaGallery.tsx",
+        "frontend/src/components/Navbar.tsx",
+        "frontend/src/components/PrayerModule.tsx",
+        "frontend/src/components/SpiritualMessage.tsx",
+        "frontend/src/components/SpiritualMessageModal.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-sacred-professional-holy-visual-theme-across-the-entire-site-use-deep-navy-midnight-blue-and-warm-ivory-cream-as-primary-colors-accent-with-gold-d4af37-for-borders-headings-and-highlights-use-playfair-display-serif-for-headings-and-a-clean-sans-serif-for-body-text-add-a-linear-gradient-to-bottom-rgba-0-0-0-0-7-transparent-overlay-on-the-hero-image-use-gold-borders-d4af37-on-priest-welcome-and-feast-day-cards-all-sections-should-slide-up-as-they-enter-the-viewport-the-online-donation-button-must-have-a-subtle-css-pulse-animation",
+      "featureTitle": "Apply a sacred, professional holy visual theme across the entire site. Use deep navy/midnight blue and warm ivory/cream as primary colors. Accent with gold (#D4AF37) for borders, headings, and highlights. Use Playfair Display (serif) for headings and a clean sans-serif for body text. Add a linear-gradient(to bottom, rgba(0,0,0,0.7), transparent) overlay on the Hero image. Use gold borders (#D4AF37) on Priest Welcome and Feast Day cards. All sections should slide up as they enter the viewport. The Online Donation button must have a subtle CSS pulse animation.",
+      "files": [
+        "frontend/src/components/AnnouncementsBanner.tsx",
+        "frontend/src/components/DonationCTA.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/MassSchedule.tsx",
+        "frontend/src/components/MediaGallery.tsx",
+        "frontend/src/components/PrayerModule.tsx",
+        "frontend/src/components/SpiritualMessage.tsx",
+        "frontend/src/hooks/useScrollAnimation.ts",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-scroll-aware-navbar-on-load-the-navbar-background-is-transparent-when-the-user-scrolls-past-50px-it-transitions-to-a-solid-deep-navy-blue-900-background-include-the-church-name-and-navigation-links-to-each-page-section",
+      "featureTitle": "Implement a scroll-aware Navbar. On load, the Navbar background is transparent. When the user scrolls past 50px, it transitions to a solid deep navy/blue-900 background. Include the church name and navigation links to each page section.",
+      "files": [
+        "frontend/src/components/Navbar.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-daily-mass-schedule-section-that-reads-from-a-local-data-store-motoko-backend-stable-variable-acting-as-a-json-like-record-display-a-table-card-list-of-mass-timings-with-fields-day-time-and-service-type-mass-confession-adoration-seed-with-default-data-sunday-6-30-am-telugu-mass-and-sunday-8-30-am-english-mass",
+      "featureTitle": "Create a Daily Mass Schedule section that reads from a local data store (Motoko backend stable variable acting as a JSON-like record). Display a table/card list of mass timings with fields: Day, Time, and Service Type (Mass / Confession / Adoration). Seed with default data: Sunday 6:30 AM Telugu Mass and Sunday 8:30 AM English Mass.",
+      "files": [
+        "frontend/src/components/MassSchedule.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-daily-spiritual-message-section-that-reads-from-backend-state-display-a-card-with-fields-title-author-pope-priest-name-full-text-and-date-implement-a-read-more-modal-that-expands-the-full-message-text-with-an-animation-when-clicked",
+      "featureTitle": "Create a Daily Spiritual Message section that reads from backend state. Display a card with fields: Title, Author (Pope/Priest name), Full Text, and Date. Implement a 'Read More' modal that expands the full message text with an animation when clicked.",
+      "files": [
+        "frontend/src/components/SpiritualMessage.tsx",
+        "frontend/src/components/SpiritualMessageModal.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-prayer-module-section-with-a-language-filter-toggle-search-input-allowing-users-to-switch-between-telugu-and-english-prayers-prayers-are-stored-in-backend-state-and-displayed-as-cards-or-a-list-the-filter-updates-the-visible-prayers-in-real-time-using-react-state",
+      "featureTitle": "Create a Prayer Module section with a language filter toggle/search input allowing users to switch between Telugu and English prayers. Prayers are stored in backend state and displayed as cards or a list. The filter updates the visible prayers in real time using React state.",
+      "files": [
+        "frontend/src/components/PrayerModule.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-church-media-gallery-section-that-reads-from-backend-state-display-uploaded-images-and-youtube-video-embeds-with-captions-in-a-responsive-grid-images-are-stored-as-base64-or-url-references-youtube-urls-render-as-embedded-iframes",
+      "featureTitle": "Create a Church Media Gallery section that reads from backend state. Display uploaded images and YouTube video embeds with captions in a responsive grid. Images are stored as base64 or URL references; YouTube URLs render as embedded iframes.",
+      "files": [
+        "frontend/src/components/MediaGallery.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-announcements-banner-at-the-top-of-the-page-below-navbar-that-reads-from-backend-state-display-highlight-text-event-date-and-respect-an-active-toggle-only-show-the-banner-when-active-is-true",
+      "featureTitle": "Create an Announcements Banner at the top of the page (below Navbar) that reads from backend state. Display highlight text, event date, and respect an 'Active' toggle — only show the banner when Active is true.",
+      "files": [
+        "frontend/src/components/AnnouncementsBanner.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-embed-the-google-map-for-the-church-location-using-the-shared-url-https-share-google-rgb7smob1cdcbhuip-since-shared-google-links-cannot-be-iframed-directly-display-a-prominent-view-on-google-maps-button-link-that-opens-the-url-in-a-new-tab-accompanied-by-the-church-address-in-nellore",
+      "featureTitle": "Embed the Google Map for the church location using the shared URL https://share.google/RgB7sMob1CDcBHUIp. Since shared Google links cannot be iframed directly, display a prominent 'View on Google Maps' button/link that opens the URL in a new tab, accompanied by the church address in Nellore.",
+      "files": [
+        "frontend/src/components/GoogleMap.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-protected-admin-dashboard-at-the-admin-route-guard-it-with-a-login-page-that-checks-a-hardcoded-password-churchofholyrosary-2026-on-successful-login-set-an-auth-session-value-in-localstorage-on-subsequent-visits-if-the-auth-session-is-valid-skip-the-login-screen-provide-a-logout-button-that-clears-the-session",
+      "featureTitle": "Build a protected Admin Dashboard at the /admin route. Guard it with a login page that checks a hardcoded password: ChurchofHolyRosary@2026. On successful login, set an auth_session value in localStorage. On subsequent visits, if the auth session is valid, skip the login screen. Provide a logout button that clears the session.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AdminDashboard.tsx",
+        "frontend/src/pages/AdminLogin.tsx",
+        "frontend/src/utils/auth.ts"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-admin-dashboard-with-four-management-modules-1-mass-schedule-add-edit-delete-entries-with-day-time-service-type-fields-2-spiritual-message-form-with-title-author-full-text-date-fields-3-media-gallery-upload-images-single-file-and-bulk-folder-selection-add-youtube-urls-add-captions-and-manage-delete-existing-items-4-announcements-form-with-highlight-text-event-date-and-active-toggle-each-module-has-a-save-button-that-persists-data-to-motoko-backend-state-via-canister-calls",
+      "featureTitle": "Build the Admin Dashboard with four management modules: (1) Mass Schedule — add/edit/delete entries with Day, Time, Service Type fields; (2) Spiritual Message — form with Title, Author, Full Text, Date fields; (3) Media Gallery — upload images (single file and bulk folder selection), add YouTube URLs, add captions, and manage/delete existing items; (4) Announcements — form with Highlight Text, Event Date, and Active toggle. Each module has a Save button that persists data to Motoko backend state via canister calls.",
+      "files": [
+        "frontend/src/components/admin/AnnouncementsManager.tsx",
+        "frontend/src/components/admin/MassScheduleManager.tsx",
+        "frontend/src/components/admin/MediaGalleryManager.tsx",
+        "frontend/src/components/admin/SpiritualMessageManager.tsx",
+        "frontend/src/pages/AdminDashboard.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-persist-unsaved-admin-form-draft-state-using-localstorage-so-that-if-the-admin-switches-browser-tabs-or-navigates-away-without-saving-the-in-progress-form-data-is-still-present-when-they-return-to-the-admin-panel-draft-state-must-only-be-cleared-when-the-admin-explicitly-logs-out-or-clicks-save-successfully",
+      "featureTitle": "Persist unsaved admin form draft state using localStorage so that if the admin switches browser tabs or navigates away without saving, the in-progress form data is still present when they return to the admin panel. Draft state must only be cleared when the admin explicitly logs out or clicks Save successfully.",
+      "files": [
+        "frontend/src/components/admin/AnnouncementsManager.tsx",
+        "frontend/src/components/admin/MassScheduleManager.tsx",
+        "frontend/src/components/admin/MediaGalleryManager.tsx",
+        "frontend/src/components/admin/SpiritualMessageManager.tsx",
+        "frontend/src/hooks/useDraftState.ts",
+        "frontend/src/utils/auth.ts"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
